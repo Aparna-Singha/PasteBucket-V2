@@ -142,7 +142,7 @@ def get_data(username):
     data = collection.find_one({'_id': username})
     if not data:
         return jsonify({
-            'data': {},
+            'value': {},
             'count': 0
         })
     
