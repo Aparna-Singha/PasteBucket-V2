@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paste Bucket</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='login.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/a63f2fde7e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="everything">
+        <div class="sidebar">
+            <div class="header">
+                <div class="title">PasteBucket</div>
+                <div class="action">
+                    <button id="add">
+                        <i class="fa-solid fa-plus" ></i>
+                    </button>
+
+                    <button id="sign-out">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="list"></div>
+
+        </div>
+        <div class="main-container">
+            <div class="header"></div>
+            <div class="code-container">
+                <textarea class="code" disabled></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-modal sign-in-modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <span class="sign-in">
+                    Sign In
+                </span>
+
+                <span class="sign-up">
+                    Sign Up
+                </span>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button onclick="signIn();" class="sign-in">Sign In</button>
+                <button onclick="signUp();" class="sign-up">Sign Up</button>
+
+                <a onclick="toggleAuthMode();" class="sign-in">
+                    Don't have an account? Sign Up
+                </a>
+
+                <a onclick="toggleAuthMode();" class="sign-up">
+                    Already have an account? Sign In
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
